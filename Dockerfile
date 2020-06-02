@@ -36,4 +36,5 @@ RUN apt-get update && apt-get install dialog apt-utils -y --no-install-recommend
                 systemd \
                 golang \
                 git \
+                openssh-client \
                 && rm -rf /var/lib/apt/lists/*
