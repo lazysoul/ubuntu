@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 MAINTAINER Lyan Nam <i@lazysoul.com>
 
@@ -36,5 +36,4 @@ RUN apt-get update && apt-get install dialog apt-utils -y --no-install-recommend
                 systemd \
                 golang \
                 git \
-                openssh-client \
                 && rm -rf /var/lib/apt/lists/*
