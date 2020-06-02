@@ -38,3 +38,8 @@ RUN apt-get update && apt-get install dialog apt-utils -y --no-install-recommend
                 openssh-client \
                 golang-1.14 \
                 && rm -rf /var/lib/apt/lists/*
+                
+                
+RUN echo "export PATH=$PATH:/usr/lib/go-1.14/bin" >> /root/.bashrc
+
+RUN echo "export GOPATH=/work/php-apm/php.agent.go" >> /root/.bashrc
