@@ -34,4 +34,6 @@ RUN apt-get update && apt-get install dialog apt-utils -y --no-install-recommend
                 sysstat \
                 iputils-ping \
                 systemd \
+                golang \
+                git \
                 && rm -rf /var/lib/apt/lists/*
