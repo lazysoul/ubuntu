@@ -18,8 +18,8 @@ ENV TZ=Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Set Korea source.list
-RUN sed -i 's/archive.ubuntu.com/ftp.daumkakao.com/g' /etc/apt/sources.list
-RUN sed -i 's/security.ubuntu.com/ftp.daumkakao.com/g' /etc/apt/sources.list
+RUN sed -i 's/archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
+RUN sed -i 's/security.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
 
 # Fix sh
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
