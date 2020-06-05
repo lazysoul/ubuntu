@@ -36,9 +36,11 @@ RUN apt-get update && apt-get install dialog apt-utils -y --no-install-recommend
                 systemd \
                 git \
                 openssh-client \
+                gnupg2 \
+                ca-certificates \
                 && rm -rf /var/lib/apt/lists/*
-                
-                
-RUN echo "export PATH=$PATH:/usr/lib/go-1.14/bin" >> /root/.bashrc
-
-RUN echo "export GOPATH=/work/php-apm/php.agent.go" >> /root/.bashrc
+              
+RUN wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local                               
+RUN echo "export PATH=$PATH:/usr/lib/go/bin" >> /root/.bashrc
+RUN echo "mkdir -p /work/go"
+RUN echo "export GOPATH=/work/go" >> /root/.bashrc
