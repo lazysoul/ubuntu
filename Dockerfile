@@ -42,5 +42,5 @@ RUN apt-get update && apt-get install dialog apt-utils -y --no-install-recommend
               
 RUN wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local                               
 RUN echo "export PATH=$PATH:/usr/lib/go/bin" >> /root/.bashrc
-RUN echo "mkdir -p /work/go"
+RUN mkdir -p /work/go
 RUN echo "export GOPATH=/work/go" >> /root/.bashrc
