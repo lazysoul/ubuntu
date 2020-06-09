@@ -43,15 +43,18 @@ RUN apt-get update && apt-get install dialog apt-utils -y --no-install-recommend
                 fonts-powerline \
                 && rm -rf /var/lib/apt/lists/*
                 
-RUN wget -c https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local                               
-RUN echo "export PATH=$PATH:/usr/local/go/bin" >> /root/.bashrc
-RUN mkdir -p /work/go
-RUN echo "export GOPATH=/work/go" >> /root/.bashrc
+
 # terminal colors with xterm
 ENV TERM xterm
 # set the zsh theme
 ENV ZSH_THEME agnoster
 # run the installation script  
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+
+RUN wget -c https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local                               
+RUN echo "export PATH=$PATH:/usr/local/go/bin" >> /root/.zshrc
+RUN mkdir -p /work/go
+RUN echo "export GOPATH=/work/go" >> /root/.zshrc
+
 # start zsh
 CMD [ "zsh" ]
